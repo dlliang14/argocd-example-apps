@@ -16,16 +16,16 @@ spec:
                 - region: us
   template:
     metadata:
-      name: 'appset-matrix-{{env}}-{{region}}'
+      name: "appset-matrix-{{env}}-{{region}}"
     spec:
       project: default
       source:
-        repoURL: https://github.com/argoproj/argocd-example-apps
+        repoURL: https://github.com/dlliang14/argocd-example-apps
         targetRevision: HEAD
         path: lightweight/app-a
       destination:
         server: https://kubernetes.default.svc
-        namespace: 'appset-matrix-{{env}}-{{region}}'
+        namespace: "appset-matrix-{{env}}-{{region}}"
       syncPolicy:
         syncOptions:
           - CreateNamespace=true

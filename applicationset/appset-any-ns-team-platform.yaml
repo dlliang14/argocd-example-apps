@@ -11,17 +11,17 @@ spec:
           - service: worker
   template:
     metadata:
-      name: '{{service}}'
+      name: "{{service}}"
       # Generated Applications will be in team-platform namespace (same as ApplicationSet)
     spec:
       project: team-platform
       source:
-        repoURL: https://github.com/argoproj/argocd-example-apps
+        repoURL: https://github.com/dlliang14/argocd-example-apps
         targetRevision: HEAD
         path: lightweight/app-b
       destination:
         server: https://kubernetes.default.svc
-        namespace: 'team-platform-{{service}}'
+        namespace: "team-platform-{{service}}"
       syncPolicy:
         syncOptions:
           - CreateNamespace=true

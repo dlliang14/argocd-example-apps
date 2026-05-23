@@ -8,22 +8,22 @@ metadata:
 spec:
   generators:
     - git:
-        repoURL: https://github.com/argoproj/argocd-example-apps
+        repoURL: https://github.com/dlliang14/argocd-example-apps
         revision: HEAD
         directories:
           - path: lightweight/app-*
   template:
     metadata:
-      name: 'appset-git-dir-{{path.basename}}'
+      name: "appset-git-dir-{{path.basename}}"
     spec:
       project: default
       source:
-        repoURL: https://github.com/argoproj/argocd-example-apps
+        repoURL: https://github.com/dlliang14/argocd-example-apps
         targetRevision: HEAD
-        path: '{{path}}'
+        path: "{{path}}"
       destination:
         server: https://kubernetes.default.svc
-        namespace: 'appset-git-dir-{{path.basename}}'
+        namespace: "appset-git-dir-{{path.basename}}"
       syncPolicy:
         syncOptions:
           - CreateNamespace=true
@@ -43,22 +43,22 @@ metadata:
 spec:
   generators:
     - git:
-        repoURL: https://github.com/argoproj/argocd-example-apps
+        repoURL: https://github.com/dlliang14/argocd-example-apps
         revision: this-branch-does-not-exist
         directories:
-          - path: '*'
+          - path: "*"
   template:
     metadata:
-      name: 'appset-git-broken-{{path.basename}}'
+      name: "appset-git-broken-{{path.basename}}"
     spec:
       project: default
       source:
-        repoURL: https://github.com/argoproj/argocd-example-apps
+        repoURL: https://github.com/dlliang14/argocd-example-apps
         targetRevision: HEAD
-        path: '{{path}}'
+        path: "{{path}}"
       destination:
         server: https://kubernetes.default.svc
-        namespace: 'appset-git-broken-{{path.basename}}'
+        namespace: "appset-git-broken-{{path.basename}}"
       syncPolicy:
         syncOptions:
           - CreateNamespace=true

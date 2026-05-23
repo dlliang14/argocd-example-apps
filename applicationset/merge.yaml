@@ -23,19 +23,19 @@ spec:
                   tier: high
   template:
     metadata:
-      name: 'appset-merge-{{env}}'
+      name: "appset-merge-{{env}}"
       annotations:
-        appset.demo/region: '{{region}}'
-        appset.demo/tier: '{{tier}}'
+        appset.demo/region: "{{region}}"
+        appset.demo/tier: "{{tier}}"
     spec:
       project: default
       source:
-        repoURL: https://github.com/argoproj/argocd-example-apps
+        repoURL: https://github.com/dlliang14/argocd-example-apps
         targetRevision: HEAD
         path: lightweight/app-a
       destination:
         server: https://kubernetes.default.svc
-        namespace: 'appset-merge-{{env}}'
+        namespace: "appset-merge-{{env}}"
       syncPolicy:
         syncOptions:
           - CreateNamespace=true

@@ -38,19 +38,19 @@ spec:
           maxUpdate: 10% # Gradual rollout - with 2 apps, syncs 1 at a time
   template:
     metadata:
-      name: 'appset-progressive-{{env}}-{{region}}'
+      name: "appset-progressive-{{env}}-{{region}}"
       labels:
-        env: '{{env}}'
-        region: '{{region}}'
+        env: "{{env}}"
+        region: "{{region}}"
     spec:
       project: default
       source:
-        repoURL: https://github.com/argoproj/argocd-example-apps
+        repoURL: https://github.com/dlliang14/argocd-example-apps
         targetRevision: HEAD
         path: lightweight/app-a
       destination:
         server: https://kubernetes.default.svc
-        namespace: 'appset-progressive-{{env}}-{{region}}'
+        namespace: "appset-progressive-{{env}}-{{region}}"
       syncPolicy:
         syncOptions:
           - CreateNamespace=true

@@ -11,16 +11,16 @@ spec:
           - env: prod
   template:
     metadata:
-      name: 'appset-list-{{env}}'
+      name: "appset-list-{{env}}"
     spec:
       project: default
       source:
-        repoURL: https://github.com/argoproj/argocd-example-apps
+        repoURL: https://github.com/dlliang14/argocd-example-apps
         targetRevision: HEAD
         path: lightweight/app-a
       destination:
         server: https://kubernetes.default.svc
-        namespace: 'appset-list-{{env}}'
+        namespace: "appset-list-{{env}}"
       syncPolicy:
         syncOptions:
           - CreateNamespace=true

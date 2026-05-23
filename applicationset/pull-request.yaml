@@ -25,16 +25,16 @@ spec:
         requeueAfterSeconds: 1800
   template:
     metadata:
-      name: 'appset-pr-{{number}}'
+      name: "appset-pr-{{number}}"
     spec:
       project: default
       source:
-        repoURL: https://github.com/argoproj/argocd-example-apps
-        targetRevision: '{{head_sha}}'
+        repoURL: https://github.com/dlliang14/argocd-example-apps
+        targetRevision: "{{head_sha}}"
         path: lightweight/app-a
       destination:
         server: https://kubernetes.default.svc
-        namespace: 'appset-pr-{{number}}'
+        namespace: "appset-pr-{{number}}"
       syncPolicy:
         syncOptions:
           - CreateNamespace=true
