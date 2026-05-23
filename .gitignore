@@ -1,1 +1,4 @@
 /**/charts/
+*~
+*.agekey
+dll-test-secret/secret.cleartext.yaml

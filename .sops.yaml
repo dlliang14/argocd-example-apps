@@ -1,0 +1,4 @@
+creation_rules:
+  - path_regex: ^dll-test-secret/secret\.sops\.yaml$
+    unencrypted_regex: "^(apiVersion|kind|metadata|type)$"
+    age: age1replacewithyourpublickey
