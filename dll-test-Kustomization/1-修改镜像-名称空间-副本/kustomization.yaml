@@ -15,3 +15,6 @@ images:
 replicas:
   - name: guestbook-ui
     count: 3
+
+# 修改名称空间
+namespace: demo
