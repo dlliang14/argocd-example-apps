@@ -17,4 +17,4 @@ replicas:
     count: 3
 
 # 修改名称空间
-namespace: demo
+namespace: test
